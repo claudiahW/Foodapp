@@ -6,7 +6,7 @@ function App() {
   return (
      <div className="App">
       <Search  foodData={foodData} setFoodData={setFoodData}/>
-      {foodData.map((food) =><h1>{food.title}</h1>)}
+     <FoodList foodData={foodData}/>
       </div>
   )
 }
