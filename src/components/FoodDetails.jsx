@@ -20,23 +20,29 @@ export default function FoodDetails({ foodId }) {
         <div className={styles.recipeCard}>
             <h1 className={styles.recipeName}>{food.title}</h1>
             <img className={styles.recipeImage} src={food.image} alt="" />
-       <div>  
+       <div className={styles.recipedetails}> 
+
     <span>
        <strong>⏲ {food.readyInMinutes} Minutes   </strong> 
     </span>
+
     <span>
      👪 <strong>Serves {food.servings} </strong>  
     </span>
-    <span>{food.vegetarian ? "🥕Vegetarian" : "🍖Non-vegetarian"} </span>
-    <span>{food.vegan ? "🐄 Vegan" : ""}</span>  
+    <span>
+        <strong>{food.vegetarian ? "🥕Vegetarian" : "🍖Non-vegetarian"} </strong>
+        </span>
+    <span>
+        <strong>{food.vegan ? "🐄 Vegan" : ""}
+        </strong></span>  
     </div>
     <div>
-      💵 <span>{food.pricePerServing/100} Per Serving</span>
+      💵 <span><strong>{food.pricePerServing/100} Per Serving</strong></span>
     </div>
       </div>
        
         <h2>Instructions</h2>
-        <div>
+        <div className={styles.recipeInstructions}>
          <ol>  
         {isLoading? (
         <p>Loading...</p>
